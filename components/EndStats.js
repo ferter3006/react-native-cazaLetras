@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { API_ENDPOINT } from '../api'
 
 
 const EndStats = ({ timing }) => {
@@ -39,7 +40,7 @@ const EndStats = ({ timing }) => {
     }
 
     useEffect(() => {
-        fetch(`http://192.168.1.111:8000/api/ranking/${userState.actualStage}`, {
+        fetch(`${API_ENDPOINT}/api/ranking/${userState.actualStage}`, {
             method: 'POST',
             headers: {
                 Accept: "application/json",

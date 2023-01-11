@@ -4,7 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import HomeScreen from './screens/HomeScreen'
 import Hunt from './screens/Hunt'
-import SelectStage from './components/SelectStage'
+import SelectStage from './screens/SelectStage'
+
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 
