@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-export default function App() {
+import HomeScreen from './screens/HomeScreen'
+import Hunt from './screens/Hunt'
+import SelectStage from './components/SelectStage'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+
+
+
+const Stack = createNativeStackNavigator()
+
+const App = () => {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+
+          <Stack.Screen name="PantallaHome" component={HomeScreen} />
+          <Stack.Screen name="PantallaHunt" component={Hunt} />
+          <Stack.Screen name="PantallaSelectStage" options={{ headerBackVisible: false }} component={SelectStage} />
+
+        </Stack.Navigator>
+      </NavigationContainer >
+    </Provider>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
