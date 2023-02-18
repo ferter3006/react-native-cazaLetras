@@ -40,7 +40,7 @@ const EndStats = ({ timing }) => {
     }
 
     useEffect(() => {
-        fetch(`${API_ENDPOINT}/api/ranking/${userState.actualStage}`, {
+        fetch(`${API_ENDPOINT}/api/app_cazaletras_ranking/${userState.actualStage}`, {
             method: 'POST',
             headers: {
                 Accept: "application/json",

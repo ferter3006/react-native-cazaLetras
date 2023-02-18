@@ -1,1 +1,1 @@
-export const API_ENDPOINT = 'http://192.168.1.111:8000'
+export const API_ENDPOINT = 'https://serverparatodo.ferter.es'
